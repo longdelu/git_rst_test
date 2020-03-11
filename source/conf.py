@@ -30,6 +30,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+# sphinx_markdown_tables 自已增加这一个选项在read the docs 上面会构建失败
 extensions = ['sphinx.ext.imgmath', 
               'sphinx.ext.todo', 
               'sphinx.ext.autosectionlabel', 
@@ -46,8 +47,9 @@ numfig = True
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 
-from recommonmark.parser import CommonMarkParser
-source_parsers = {'.md': CommonMarkParser,}
+#以下这两个选项在read the docs上面已经存在
+#from recommonmark.parser import CommonMarkParser
+#source_parsers = {'.md': CommonMarkParser,}
 
 source_suffix = ['.rst', '.md']
 #source_suffix = '.rst'
