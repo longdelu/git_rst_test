@@ -35,8 +35,7 @@ extensions = ['sphinx.ext.imgmath',
               'sphinx.ext.autosectionlabel', 
               'sphinx.ext.autosummary', 
               'sphinx.ext.autodoc',
-              'recommonmark',
-              'sphinx_markdown_tables']
+              'recommonmark']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
