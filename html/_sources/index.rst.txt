@@ -9,7 +9,7 @@ Sphinx + Rst + Github + Read the Docs快速入门
    :maxdepth: 4
    :caption: 目录
 
-   Sphinx_Rst_Github_ReadtheDocs
+   Sphinx + Rst + Github + Read the Docs
 
    About
 
