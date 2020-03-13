@@ -139,28 +139,30 @@ sphinx支持引用
 
 在conf.py添加引用支持，这样生成的html页面就可以跳转::
 
-  >> # Numbered figure
+  >> #添加新的配置项使能引用
   >> numfig = True
 
 
 MarkDown的主题样式theme
 -----------------------
 
-只需在conf.py如下修改即可::
+在conf.py把sphix支持的后缀文件修改为也支持 ``.md `` 后缀的MarkDown文件 ::
+
+  >> source_suffix = ['.rst', '.md'] 
+
+
+如果是Python2,需在conf.py添加配置项即可::
 
   >> from recommonmark.parser import CommonMarkParser
 
   >> source_parsers = {'.md': CommonMarkParser,}
 
-同时在conf.py把sphix支持的后缀文件修改为也支持 ``.md `` 后缀的MarkDown文件 ::
 
-  >> source_suffix = ['.rst', '.md'] 
-     
 
 安装sublime编辑器
 -----------------
 
-推荐使用sublime编辑器编写RST文档，因为sublime有一个RST插件包，里面集成了许多快捷键，通过快捷键可以快速的插入相关命令。
+推荐使用sublime编辑器编写RST文档，因为sublime有一个RST插件包，里面集成了许多快捷键，通过快捷键可以快速的插入相关RST语法命令。
 
 1. 下载安装
 
@@ -424,7 +426,7 @@ Rst标记语言语法
 更多语法请参考
 --------------
 
-更多的Rst语法示例可以参考本文档的写法，如果还想了解更多的RST语法与sphinx使用方法，请参考以下网站::
+更多的Rst语法示例可以参考本文档的写法，自行学习RST语法与sphinx使用方法，请参考以下网站::
 
 sphinx语法官网：http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html  
 
@@ -493,9 +495,16 @@ Read the Docs与Github关联
    
 部署到公司服务器
 ================
+
+Read the DocsS构建后部署
+^^^^^^^^^^^^^^^^^^^^^^^^^  
    
 可以依靠Read the docs 生成的html的文件，下载下来解压把html相关的文件夹部署到公司对应的服务器上面，例如本文的路径为: http://www.openedv.com/ATK-Prod/test/git-rst-test-latest/index.html
 
+本地编译后部署
+^^^^^^^^^^^^^^^^  
+本地编译后,打开所生成的html文件，替换掉所有html文件含有View page source内容的一个节点为对应github项目仓库对应的url地址，如本文替换为 ``<a href="https://github.com/longdelu/git_rst_test/blob/master/source/index.rst" class="fa fa-github"> Edit on Zhengdianyuanzi</a>``，然后把html相关的文件夹部署到公司对应的服务器上面，例如本文的路径为: http://www.openedv.com/ATK-Prod/test/build/html/index.html
+
 .. note::
-   路径可以通过服务器管理员修改，如通过Discuz。
+   路径可以通过服务器管理员修改。
 

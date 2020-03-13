@@ -61,7 +61,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'Sphinx + Rst + Github + Read the Docs快速入门'
+project = u'正点原子Sphinx + Rst + Github + Read the Docs + Pandoc快速入门'
 copyright = u'2020, Guanrong, Long'
 author = u'Guanrong, Long'
 
@@ -102,9 +102,9 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 # print html_theme_options
-html_theme = 'sphinx_ustack_theme'
-import sphinx_ustack_theme
-html_theme_path = [sphinx_ustack_theme.get_html_theme_path()]
+html_theme = 'sphinx_rtd_theme'
+#import sphinx_ustack_theme
+#html_theme_path = [sphinx_ustack_theme.get_html_theme_path()]
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -125,6 +125,14 @@ html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = u'bulid+reStructuredText+Sphinx+env'
+
+
+html_logo         = u'atklogo.png'
+
+#html_short_title  = u'atk'
+
+
+html_baseurl      = u'https://github.com/longdelu/git_rst_test/blob/master/source/index.rst'
 
 
 # -- Options for LaTeX output ---------------------------------------------
