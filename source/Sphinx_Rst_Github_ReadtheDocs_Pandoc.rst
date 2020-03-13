@@ -497,13 +497,16 @@ Read the Docs与Github关联
 ================
 
 Read the DocsS构建后部署
-^^^^^^^^^^^^^^^^^^^^^^^^^  
+------------------------
    
 可以依靠Read the docs 生成的html的文件，下载下来解压把html相关的文件夹部署到公司对应的服务器上面，例如本文的路径为: http://www.openedv.com/ATK-Prod/test/git-rst-test-latest/index.html
 
+
 本地编译后部署
-^^^^^^^^^^^^^^^^  
-本地编译后,打开所生成的html文件，替换掉所有html文件含有View page source内容的一个节点为对应github项目仓库对应的url地址，如本文替换为 ``<a href="https://github.com/longdelu/git_rst_test/blob/master/source/index.rst" class="fa fa-github"> Edit on Zhengdianyuanzi</a>``，然后把html相关的文件夹部署到公司对应的服务器上面，例如本文的路径为: http://www.openedv.com/ATK-Prod/test/build/html/index.html
+--------------
+
+
+本地编译后,打开所生成的html文件，替换掉所有html文件含有View page source内容的一个节点为对应github项目仓库对应的url地址，如本文替换为 ``<a href="https://github.com/longdelu/git_rst_test/blob/master/source/index.rst" class="fa fa-github"> Edit on alientek</a>``，然后把html相关的文件夹部署到公司对应的服务器上面，例如本文的路径为: http://www.openedv.com/ATK-Prod/test/html/index.html
 
 .. note::
    路径可以通过服务器管理员修改。
