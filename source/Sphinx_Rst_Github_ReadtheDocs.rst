@@ -25,6 +25,10 @@ Read the docs
 Read the docs通过与Github关联，执行自动构建、版本控制和为您托管文档，阅读文档简化了软件文档。作为软件文档托管平台，对于Github开源项目/公开仓库服务是免费的。
 
 
+pandoc
+------
+Pandoc是不同格式文件转换工具，可实现不同标记语言间的格式转换，如word文档转html。
+
 
 环境搭建
 ========
@@ -98,7 +102,7 @@ Windows中常用的TeX编译引擎是 `MikTex <https://miktex.org/download>`_ �
 如果需要在移动设备中安装，请参考 `Portable Edition <https://miktex.org/howto/portable-edition>`_ 的操作。
 
 
-这是Sphinx支持的一种网页主题之一，仅仅对生成HTML时有效。个人对这种主题比较喜爱，其它的不甚满意。安装方法和Sphinx的安装类似，故不再赘述。
+这是Sphinx支持的一种常用于转换生成pdf的工具，下载完成后即可以安装。
 
 
 sphinx支持MarkDown
@@ -170,6 +174,11 @@ MarkDown的主题样式theme
    :align: center
 
    添加rst插件
+
+pandoc安装
+----------
+
+pandoc的软件及安装说明：https://github.com/jgm/pandoc/blob/master/INSTALL.md。安装完成后，感兴趣的可以查看pandoc用户手册：https://pandoc.org/MANUAL.html    
 
 
 FAQ
