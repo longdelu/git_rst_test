@@ -44,8 +44,7 @@ extensions = ['sphinx.ext.imgmath',
               'sphinx.ext.todo', 
               'sphinx.ext.autosectionlabel', 
               'sphinx.ext.autosummary', 
-              'sphinx.ext.autodoc',
-              'sphinx_search.extension']
+              'sphinx.ext.autodoc']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -94,6 +93,8 @@ language = u'zh_CN'
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ["_build"]
+
+
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
@@ -110,15 +111,15 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 # print html_theme_options
-# html_theme = 'sphinx_rtd_theme'
-# import sphinx_rtd_theme
-# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme = 'sphinx_rtd_theme'
+import sphinx_rtd_theme
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # html_theme_options = {
 #     'logo_only': True,
 # }
-html_theme = 'sphinx_ustack_theme'
-import sphinx_ustack_theme
-html_theme_path = [sphinx_ustack_theme.get_html_theme_path()]
+# html_theme = 'sphinx_ustack_theme'
+# import sphinx_ustack_theme
+# html_theme_path = [sphinx_ustack_theme.get_html_theme_path()]
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -142,18 +143,16 @@ html_split_index = True
 html_search_language = u'zh_CN'
 
 #使用本地的搜索功能
-html_sidebars = {
-   '_templates': ['searchbox.html'],
-}
+# html_sidebars = {
+#    '_templates': ['searchbox.html'],
+# }
 
 
 html_css_files = [
-    "css/custom.css",
+    "_templates/sphinx_rtd_theme/static/css/custom.css",
 ]
 
-html_js_files = [
-    "js/custom.js",
-]
+
 
 
 
