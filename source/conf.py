@@ -27,16 +27,24 @@
 #
 # needs_sphinx = '1.0'
 
+
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 # sphinx_markdown_tables 自已增加这一个选项在read the docs 上面会构建失败
+
+import os
+import sys
+
+#sys.path.append(os.path.abspath('_ext'))
+
 extensions = ['sphinx.ext.imgmath', 
               'sphinx.ext.todo', 
               'sphinx.ext.autosectionlabel', 
               'sphinx.ext.autosummary', 
               'sphinx.ext.autodoc',
-              'recommonmark']
+              'sphinx_search.extension']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -102,10 +110,15 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 # print html_theme_options
-#html_theme = 'sphinx_rtd_theme'
-html_theme = 'sphinx_ustack_theme'
-import sphinx_ustack_theme
-html_theme_path = [sphinx_ustack_theme.get_html_theme_path()]
+html_theme = 'sphinx_rtd_theme'
+import sphinx_rtd_theme
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# html_theme_options = {
+#     'logo_only': True,
+# }
+# html_theme = 'sphinx_ustack_theme'
+# import sphinx_ustack_theme
+# html_theme_path = [sphinx_ustack_theme.get_html_theme_path()]
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -120,6 +133,45 @@ html_theme_path = [sphinx_ustack_theme.get_html_theme_path()]
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_use_index = True
+
+html_split_index = True
+
+
+html_search_language = u'zh_CN'
+
+#使用本地的搜索功能
+html_sidebars = {
+   '_templates': ['searchbox.html'],
+}
+
+
+# html_search_options = {
+#     'type': 'mecab',
+#     'dic_enc': 'utf-8',
+#     'dict': '/path/to/mecab.dic',
+#     'lib': '/path/to/libmecab.so',
+# }
+
+# notfound_context = {
+#     'title': 'Page Not Found',
+#     'body': '''
+# <h1>Page Not Found</h1>
+# <p>Sorry, we couldn't find that page.</p>
+# <p>Try using the search box or go to the homepage.</p>
+# ''',
+# }
+
+
+#manpages_url = u'https://github.com/longdelu/git_rst_test/blob/master/source/index.rst' 
+import sphinxcontrib
+
+# from sphinxcontrib.websupport import WebSupport
+
+# support = WebSupport(datadir='/path/to/the/data',
+#                      search='xapian')
+
 
 
 # -- Options for HTMLHelp output ------------------------------------------
@@ -139,7 +191,7 @@ html_baseurl      = u'https://github.com/longdelu/git_rst_test/blob/master/sourc
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_engine = 'xelatex'
-latex_logo   = ''
+latex_logo   = 'atklogo.png'
 # latex_show_pagerefs = True
 latex_show_urls = 'footnote'
 
