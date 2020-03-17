@@ -1,0 +1,3 @@
+[sphinx.html_themes]
+sphinx_ustack_theme = sphinx_ustack_theme
+

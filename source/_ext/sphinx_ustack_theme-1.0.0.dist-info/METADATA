@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: sphinx-ustack-theme
+Version: 1.0.0
+Summary: Read the Docs theme for Sphinx
+Home-page: https://github.com/unitedstack/sphinx_rtd_theme
+Author: Yin Yang
+Author-email: yybnbn@126.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Framework :: Sphinx
+Classifier: Framework :: Sphinx :: Theme
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Documentation
+Classifier: Topic :: Software Development :: Documentation
+
+
+
+====================
+sphxin_ustack_theme
+====================
+
+
+``sphinx_ustack_theme`` 基于 ``sphinx_rtd_theme`` 主题修改而成，原主题请点击 这里_。
+
+
+.. _这里: https://github.com/rtfd/sphinx_rtd_theme
+
+安装
+==========
+
+使用pip安装:
+
+   pip install sphinx_ustack_theme
+
+
+配置
+=============
+
+使用本主题请在 ``conf.py`` 文件中包含下列代码来引入本主题
+
+  import sphinx_ustack_theme
+
+  html_theme = 'sphinx_ustack_theme'
+
+其他配置请参考 ``sphinx_rtd_theme`` 主题，点击 `这里 <https://sphinx-rtd-theme.readthedocs.io/en/latest/configuring.html>`__。
+
+
+
+
+
