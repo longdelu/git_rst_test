@@ -38,6 +38,7 @@ import os
 import sys
 
 sys.path.append(os.path.abspath('_ext'))
+sys.path.append(os.path.abspath('_templates'))
 
 extensions = ['sphinx.ext.imgmath', 
               'sphinx.ext.todo', 
@@ -92,8 +93,7 @@ language = u'zh_CN'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = []
-
+exclude_patterns = ["_build"]
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
@@ -145,6 +145,16 @@ html_search_language = u'zh_CN'
 html_sidebars = {
    '_templates': ['searchbox.html'],
 }
+
+
+html_css_files = [
+    "css/custom.css",
+]
+
+html_js_files = [
+    "js/custom.js",
+]
+
 
 
 # html_search_options = {
