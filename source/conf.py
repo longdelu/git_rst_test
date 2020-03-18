@@ -112,7 +112,7 @@ todo_include_todos = False
 #
 # print html_theme_options
 html_theme = 'sphinx_rtd_theme'
-import sphinx_rtd_theme
+# import sphinx_rtd_theme
 html_theme_path = "_templates/sphinx_rtd_theme"
 # html_theme_options = {
 #     'logo_only': True,
