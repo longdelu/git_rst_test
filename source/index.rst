@@ -11,8 +11,6 @@
 
    Sphinx_Rst_Github_ReadtheDocs_Pandoc
 
-   ./pandocs/pandoc_use
-
    About
    
    

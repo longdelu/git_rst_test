@@ -458,7 +458,26 @@ Rst中，通过一个或一个以上空行隔开的文本块是一个段落。 �
 
 sphinx语法官网：http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html  
 
-restruct语法官网：http://docutils.sourceforge.net/rst.html     
+restruct语法官网：http://docutils.sourceforge.net/rst.html  
+
+
+pandoc使用
+==========
+
+word转rst
+---------
+
+例如一个word的文档为 ``test.docx``, 则该文档转换成rst输入下面該命令即可::
+
+  >> pandoc -s test.docx -o test.rst --extract-media=test_docx_pic
+
+
+.. attention::
+     其中，-s表示源文件；-o表示输出指定格式的目标文件，--extract-media=test_docx_pic 表示word文档的图片输出到指定的文件夹，这里示例为test_docx_pic。
+
+
+如果文件过长，输出过长时间未有发应，请重式或者把word文档按章节细拆分后再转换。转换完成后，请把转换生成的rst文件拷贝到指定的项目中，按照本文介绍的把该RST文件简单生成html文件的方法生成一个html文件看看效果，根据效果，细调表格，图片，引用，超链接，标题，代码块的效果。
+
 
 
 Read the Docs与Github关联
@@ -538,4 +557,30 @@ Read the DocsS构建后部署
 
 .. note::
    路径可以通过服务器管理员修改。
+
+
+
+文档编写流程
+================
+
+- 在线文档编写后面也会托管Github上面，所以还需学会git操作，比如简单的克隆文档仓库，提交文档修该，更新仓库文档以保持同步，推送文档修改到仓库。本文档位于Github仓库的地址 https://github.com/alientek-openedv/Products
+
+
+- 通过本教程熟悉rst在线文档后，参考公司在线教程文档的示例，修订及整理在线文档(和资料盘的内容一致)  
+  
+- 推送到Github仓库上面，并及时更新公司对应的服务器上面   
+
+
+
+
+
+注意事项
+================
+
+- 编写Rst使用的图片不能有中文
+
+- 编写Rst使用的文件夹不能用中文
+  
+
+
 
