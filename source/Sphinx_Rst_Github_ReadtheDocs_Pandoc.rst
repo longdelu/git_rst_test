@@ -40,7 +40,7 @@ Pandoc是不同格式文件转换工具，可实现不同标记语言间的格�
 
 1. 下载
 
-在Python的 `官方网站 <https://www.python.org/downloads/windows/>`_  下载安装程序, 如 :numref:`python_web` 所示。根据所用系统是32位还是64位选择下载哪个进行安装。考虑到平时使用的相关插件不支持Python 3，故本文选择Python 2，可以根据自己的需要选择具体版本进行安装。
+在Python的 `官方网站 <https://www.python.org/downloads/windows/>`_  下载安装程序, 如 :numref:`python_web` 所示。根据所用系统是32位还是64位选择下载哪个进行安装。考虑到平时使用的相关插件不支持Python 2，故本文选择Python 3，可以根据自己的需要选择具体版本进行安装。
 
  .. _python_web:
  
@@ -51,19 +51,27 @@ Pandoc是不同格式文件转换工具，可实现不同标记语言间的格�
 
 2. 安装
    
-双击下载的Python软件，根据需要修改安装路径，默认安装路径为 ``C:\python27`` 。
+双击下载的Python软件，根据需要修改安装路径，默认安装路径为 ``C:\python37`` 。
 
 3. 添加系统环境变量
 
-将Python安装路径下的 ``C:\Python27\Scripts`` 和 ``C:\Python27`` 添加到系统环境变量中。
+将Python安装路径下的 ``C:\Python37\Scripts`` 和 ``C:\Python37`` 添加到系统环境变量中。
+
+
+.. note::
+
+   也可以使用资料包的python3直接解压使用即可，如果直接使用现成的，下面一些安装python插件及使用pip安装依赖包可以无需重复安装，因为压缩里面的已经集成好了。
 
 
 安装pip插件
 -----------
-   
+ 
+对于 python2, 默认的python 安装包没有这个插件，需自已手动安装，本文使用的是python3, 默认自带， **可以跳过这一步**。
+
 pip也是一个Python的包管理工具，它和setuptools类似，但是pip比setuptools更好用，现在安装python包基本都是使用pip了。下载 `pip <https://pypi.org/project/pip/#files>`_ 插件，将下载的文件解压（解压到一个文件夹，用CMD控制台进入解压文件的目录 ，目录中不要包含汉字），进入解压目录，执行命令::
 
   >> python setup.py install
+
 
 
 安装Sphinx插件
@@ -75,17 +83,40 @@ pip也是一个Python的包管理工具，它和setuptools类似，但是pip比s
 
 即可完成 **Sphinx** 最新版本的安装。
 
+如果安装时， 报 ``you should consider upgrding via the 'python -m pip install --upgrade pip', 请重新输入命令同时先更新pip
+
+  >>  python -m pip install --upgrade pip 
+
 .. note::
 
-   因为Sphinx依赖其它的Python插件，因此强烈推荐使用在线安装。如果主机未能联网，可以先选择一台可联网的主机，安装好Python及其相关插件后，将整个安装文件夹（如默认安装，则是C:\Python27）拷贝过去也行。pip命令的使用在Windows环境即可。
+   更新成功后，再次输入 pip install sphinx 命令重装。因为Sphinx依赖其它的Python插件，因此强烈推荐使用在线安装。如果主机未能联网，可以先选择一台可联网的主机，安装好Python及其相关插件后，将整个安装文件夹（如默认安装，则是C:\Python37）拷贝过去也行。pip命令的使用在Windows环境即可。
 
 
 sphinx-rtd-theme
-----------------
+--------------
 
 这是Sphinx支持的一种网页主题之一，仅仅对生成HTML时有效。个人对这种主题比较喜爱，其它的不甚满意。安装方法和Sphinx的安装类似，输入以下命令即可以安装。
 
-  >> pip install sphinx_rtd_theme
+  >> pip install sphinx_rtd_theme  
+
+
+安装BeautifulSoup
+----------------
+  >> pip3 install beautifulsoup4   
+
+
+安装第三方html解析器lxml
+----------------
+
+  >> pip3 install lxml
+
+
+安装纯Python实现的html5lib解析器
+----------------
+
+  >> pip3 install html5lib 
+
+
 
 安装LaTeX
 ---------
@@ -99,63 +130,9 @@ Windows中常用的TeX编译引擎是 `MikTex <https://miktex.org/download>`_ �
 
    下载MiKTeX
 
-如果需要在移动设备中安装，请参考 `Portable Edition <https://miktex.org/howto/portable-edition>`_ 的操作。
+如果需要在移动设备中安装，请参考 `Portable Edition <https://miktex.org/howto/portable-edition>`_ 的操作。这是Sphinx支持的一种常用于转换生成pdf的工具，下载完成后即可以安装。
 
 
-这是Sphinx支持的一种常用于转换生成pdf的工具，下载完成后即可以安装。
-
-
-sphinx支持MarkDown
-------------------
-
-可以在同一个Sphinx项目中使用Markdown和reStructuredText, 输入命令完成sphinx的MarkDown的基础支持::
-
-  >> pip install recommonmark
-
-然后在conf.py原有的 extensions 配置项多添加扩支持::
-
-  >> extensions = ['recommonmark']
-
-如果还要支持MarkDown的表格语法，还需要安装 sphinx-markdown-tables ::
-
-  >> pip install sphinx-markdown-tables
-
-如果是Python2, 还需在conf.py原有的 extensions 配置项再多添加扩支持 ::
-
-  >> extensions = ['sphinx_markdown_tables'] 
-
-增加完该配置项即变为如下所示，注意Python2还会多出一项 ``sphinx_markdown_tables' `` ::  
-
-  >> extensions = ['sphinx.ext.imgmath',  
-                   'sphinx.ext.todo',  
-                   'sphinx.ext.autosectionlabel',  
-                   'sphinx.ext.autosummary',  
-                   'sphinx.ext.autodoc'， 
-                   'recommonmark'] 
-
-
-sphinx支持引用
---------------
-
-在conf.py添加引用支持，这样生成的html页面就可以跳转::
-
-  >> #添加新的配置项使能引用
-  >> numfig = True
-
-
-MarkDown的主题样式theme
------------------------
-
-在conf.py把sphix支持的后缀文件修改为也支持 ``.md `` 后缀的MarkDown文件 ::
-
-  >> source_suffix = ['.rst', '.md'] 
-
-
-如果是Python2,需在conf.py添加配置项即可::
-
-  >> from recommonmark.parser import CommonMarkParser
-
-  >> source_parsers = {'.md': CommonMarkParser,}
 
 
 
@@ -183,23 +160,6 @@ pandoc安装
 pandoc的软件及安装说明：https://github.com/jgm/pandoc/blob/master/INSTALL.md。安装完成后，感兴趣的可以查看pandoc用户手册：https://pandoc.org/MANUAL.html    
 
 
-FAQ
----
-有些新的版本对应的Python环境不同，有可能安装了用不了，可以采用以下的方法安装相关工具及设置环境：
-
-1. 利用相关同事安装并测试好的Latex版本压缩包，解压缩 MiKTeX 2.9.7z 至 C:\Program Files\
-
-2. 解压缩 MiKTeX(ProgramData).7z 至 C:\ProgramData\
-
-3. 解压缩 MiKTeX(AppData-Local).7z 至 C:\Users\$UNAME$\AppData\Local\  $UNAME$ 为你的计算机用户名
-
-4. 解压缩 MiKTeX(AppData-Roaming).7z 至 C:\Users\$UNAME$\AppData\Roaming\  $UNAME$ 为你的计算机用户名
-
-5. 添加系统环境变量: C:\Program Files\MiKTeX 2.9\miktex\bin\x64;
-
-6. 安装完Python时还需添加环境变量: C:\Python27\Scripts；C:\Python27\Scripts
-
-7. 还需安装make工具，本文使用的msys提供的make工具。安装完成后，添加如下环境变量: C:\msys\1.0; C:\msys\1.0\bin    
 
 
 创建编辑
@@ -271,7 +231,64 @@ build用来存放文档编译过程中的中间文件以及最终生成的文件
 
      test
 
-Python配置文件conf.py主要是更改生成文档的主题，生成文档的名称，使用的语言，还用更改生成文档的一些参数，前面也有一些了介绍，如 :ref:`sphinx支持引用` 所示。
+Python配置文件conf.py主要是更改生成文档的主题，生成文档的名称，使用的语言，还用更改生成文档的一些参数。
+
+
+sphinx支持MarkDown
+------------------
+
+可以在同一个Sphinx项目中使用Markdown和reStructuredText, 输入命令完成sphinx的MarkDown的基础支持::
+
+  >> pip install recommonmark
+
+然后在conf.py原有的 extensions 配置项多添加扩支持::
+
+  >> extensions = ['recommonmark']
+
+如果还要支持MarkDown的表格语法，还需要安装 sphinx-markdown-tables ::
+
+  >> pip install sphinx-markdown-tables
+
+如果是Python2, 还需在conf.py原有的 extensions 配置项再多添加扩支持 ::
+
+  >> extensions = ['sphinx_markdown_tables'] 
+
+增加完该配置项即变为如下所示，注意Python2还会多出一项 ``sphinx_markdown_tables' `` ::  
+
+  >> extensions = ['sphinx.ext.imgmath',  
+                   'sphinx.ext.todo',  
+                   'sphinx.ext.autosectionlabel',  
+                   'sphinx.ext.autosummary',  
+                   'sphinx.ext.autodoc'， 
+                   'recommonmark'] 
+
+
+sphinx支持引用
+--------------
+
+在conf.py添加引用支持，这样生成的html页面就可以跳转::
+
+  >> #添加新的配置项使能引用
+  >> numfig = True
+
+
+MarkDown的主题样式theme
+-----------------------
+
+在conf.py把sphix支持的后缀文件修改为也支持 ``.md `` 后缀的MarkDown文件 ::
+
+  >> source_suffix = ['.rst', '.md'] 
+
+
+如果是Python2,需在conf.py添加配置项即可::
+
+  >> from recommonmark.parser import CommonMarkParser
+
+  >> source_parsers = {'.md': CommonMarkParser,}
+
+
+生成文件及PDF
+-----------------------
 
 Rst文档编辑完成及conf.py作好相对应的修改后，即可在文档根目录下(本文即rst目录)，输入 ``make``  会弹出不同输出格式的编译命令，如果需要编译输出 ``html``，只需输入::
 
@@ -556,7 +573,7 @@ Read the DocsS构建后部署
 本地编译后,打开所生成的html文件，替换掉所有html文件含有View page source内容的一个节点为对应github项目仓库对应的url地址，如本文替换为 ``<a href="https://github.com/longdelu/git_rst_test/blob/master/source/index.rst" class="fa fa-github"> Edit on alientek</a>``，然后把html相关的文件夹部署到公司对应的服务器上面，例如本文的路径为: http://www.openedv.com/ATK-Prod/test/html/index.html
 
 .. note::
-   路径可以通过服务器管理员修改。
+   路径可以通过服务器管理员修改及决定。
 
 
 
@@ -572,10 +589,33 @@ Read the DocsS构建后部署
 
 
 
-
+=
 
 注意事项
 ================
+
+搭建环境时的注意事项
+--------------------
+
+有些新的版本对应的Python环境不同，有可能安装了用不了，可以采用以下的方法安装相关工具及设置环境：
+
+1. 利用相关同事安装并测试好的Latex版本压缩包，解压缩 MiKTeX 2.9.7z 至 C:\Program Files\
+
+2. 解压缩 MiKTeX(ProgramData).7z 至 C:\ProgramData\
+
+3. 解压缩 MiKTeX(AppData-Local).7z 至 C:\Users\$UNAME$\AppData\Local\  $UNAME$ 为你的计算机用户名
+
+4. 解压缩 MiKTeX(AppData-Roaming).7z 至 C:\Users\$UNAME$\AppData\Roaming\  $UNAME$ 为你的计算机用户名
+
+5. 添加系统环境变量: C:\Program Files\MiKTeX 2.9\miktex\bin\x64;
+
+6. 安装完Python时还需添加环境变量: C:\Python37\Scripts；C:\Python37\Scripts
+
+7. 还需安装make工具，本文使用的msys提供的make工具。安装完成后，添加如下环境变量: C:\msys\1.0; C:\msys\1.0\bin 
+   
+
+编写在线文档时的注意事项
+--------------------      
 
 - 编写Rst使用的图片不能有中文
 
