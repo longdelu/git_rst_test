@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 作者正点原子保留所有权，如有bug请反馈
+# 作者正点原子保留所有权，如有bug请反馈龙冠荣
 # 本脚本用来处理html文件的相关信息，如删除多余的html文件
 # 修改html文件能链接到Github上面
 # 文档当中的第三方链接通过弹新窗口打开
@@ -30,7 +30,7 @@ import xml.etree.ElementTree as ET
 examples = []
 
 
-git_hub_url = ["https://github.com/longdelu/git_rst_test/tree/master/source"]
+git_hub_url = ["https://github.com/longdelu/git_rst_test/tree/master/source/"]
 
 
 git_hub_nam = [r' Edit on QuickStart']

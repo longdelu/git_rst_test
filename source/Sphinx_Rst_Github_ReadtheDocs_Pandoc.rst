@@ -1,4 +1,4 @@
-本文主要介绍Sphinx+Rst+Github+Read the Docs如何使用，主要用来编写生成在线文档，也可以生成pdf，文档推送到Github后还可以关联Read the Docs，完美托管软件代码与文档, 还具备打包功能，组合使用非常强大。Rst语言和Markdown类似，但相对于 **Mardown** 标记语言，RST语言功能更加强大，语言体系更加标准，配合Sphinx处理工具，可以写出非常漂亮的在线文档。
+本文主要介绍Sphinx+Rst+Github+Read the Docs+Pandoc如何使用，主要用来编写生成在线文档，也可以生成pdf，文档推送到Github后还可以关联Read the Docs，完美托管软件代码与文档, 还具备打包功能，组合使用非常强大。Rst语言和Markdown类似，但相对于 **Mardown** 标记语言，RST语言功能更加强大，语言体系更加标准，配合Sphinx处理工具，可以写出非常漂亮的在线文档。
 
 简介
 ====
@@ -83,32 +83,32 @@ pip也是一个Python的包管理工具，它和setuptools类似，但是pip比s
 
 即可完成 **Sphinx** 最新版本的安装。
 
-如果安装时， 报 ``you should consider upgrding via the 'python -m pip install --upgrade pip', 请重新输入命令同时先更新pip
+如果安装时， 报 ``you should consider upgrding via the 'python -m pip install --upgrade pip`` , 请重新输入命令同时先更新pip
 
-  >>  python -m pip install --upgrade pip 
+  >> python -m pip install --upgrade pip 
 
 .. note::
 
    更新成功后，再次输入 pip install sphinx 命令重装。因为Sphinx依赖其它的Python插件，因此强烈推荐使用在线安装。如果主机未能联网，可以先选择一台可联网的主机，安装好Python及其相关插件后，将整个安装文件夹（如默认安装，则是C:\Python37）拷贝过去也行。pip命令的使用在Windows环境即可。
 
 
-sphinx-rtd-theme
+安装sphinx-rtd-theme
 --------------
 
 这是Sphinx支持的一种网页主题之一，仅仅对生成HTML时有效。个人对这种主题比较喜爱，其它的不甚满意。安装方法和Sphinx的安装类似，输入以下命令即可以安装。
 
   >> pip install sphinx_rtd_theme  
 
-
 安装BeautifulSoup
-----------------
+------------------
+
   >> pip3 install beautifulsoup4   
 
 
 安装第三方html解析器lxml
-----------------
+------------------------
 
-  >> pip3 install lxml
+  >> pip3 install lxml 
 
 
 安装纯Python实现的html5lib解析器
